@@ -79,24 +79,6 @@ public class Main {
 
 		// TODO ここに合計ロジック記載
 
-		// for (int index = 0; index < list.size(); index++) {
-		// Model model = list.get(index);
-		// // list.get(0)のmodel
-		// // list.get(1)のmodel
-		// // 以下反復
-		// int result = model.getAmount();
-		// // result = 1
-		// // result = 2
-		// // 以下反復
-		// result_list = result_list + result;
-		// // result_list = 0+1
-		// // result_list = 0+1 + 2
-		// // 以下反復
-		// }
-		
-		
-	
-		// listの中のModel型を１つずつ取り出しながら +　getする
 		for (Model model : list) {
 			int model_get = model.getAmount();
 			result_list = result_list + model_get;
@@ -107,10 +89,6 @@ public class Main {
 		/////////////////////////////////////////////
 		// 値を取り出し合計するコードを書いてください。
 		List<List<Model>> finalList = new ArrayList<List<Model>>();
-
-		// List型のfinalList (ArrayListではない)
-		// List<List<Model> finalList = new ArrayList<>(); と同じ
-
 		finalList.add(new ArrayList<Model>() {
 			{
 				add(new Model(1));
@@ -124,13 +102,11 @@ public class Main {
 				add(new Model(9));
 			}
 		});
-		// Model型のArrayListにaddしてそのままModel型のListにaddする
-
 		int result_final = 0;
 
 		// TODO ここに合計ロジック記載
 
-		List<Model> tsil = finalList.get(0); // finalList.add()内部の全addを取得
+		List<Model> tsil = finalList.get(0);
 
 		for (int index = 0; index < 9; index++) {
 			Model model = tsil.get(index);
@@ -157,8 +133,5 @@ public class Main {
 			this.amount = amount;
 		}
 	}
-	// amountにint値をsetし、それをreturnしてget（取得）する
-	// Modelクラスで生成されたインスタンスはModel型 (int型 X )
-	// getAmount()しない限りsetAmount()されたintの値は取得できない
 
 }
