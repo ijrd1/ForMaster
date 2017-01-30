@@ -90,9 +90,12 @@ public class Main {
 		int result_final = 0;
 
 		// TODO ここに合計ロジック記載
-		for (int index = 0; index < 9; index++) {
-			int listModelGet = finalList.get(0).get(index).getAmount();
-			result_final += listModelGet;
+		// Listの取り出し
+		for (List<Model> listModel : finalList) {
+			// ArrayListの取り出し
+			for (Model model : listModel) {
+				result_final += model.getAmount();
+			}
 		}
 		System.out.println("final合計：" + result_final);
 
