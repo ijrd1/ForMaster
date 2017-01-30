@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 
 		/////////////////////////////////////////////
@@ -18,6 +18,10 @@ public class Main {
 		int result_array = 0;
 
 		// TODO ここに合計ロジック記載
+
+		for (int i = 0; i < array.length; i++) {
+			result_array = result_array + array[i];
+		}
 
 		System.out.println("array合計：" + result_array);
 
@@ -28,6 +32,10 @@ public class Main {
 		int result_set = 0;
 
 		// TODO ここに合計ロジック記載
+
+		for (Integer s : set) {
+			result_set = result_set + s;
+		}
 
 		System.out.println("set合計：" + result_set);
 
@@ -46,6 +54,12 @@ public class Main {
 		int result_map = 0;
 
 		// TODO ここに合計ロジック記載
+
+		for (String key : map.keySet()) {
+			Integer value = map.get(key);
+
+			result_map = result_map + value;
+		}
 
 		System.out.println("map合計：" + result_map);
 
@@ -66,11 +80,30 @@ public class Main {
 
 		// TODO ここに合計ロジック記載
 
+		for (int index = 0; index < list.size(); index++) {
+			Model model = list.get(index);
+			// list.get(0)のmodel
+			// list.get(1)のmodel
+			// 以下反復
+			int result = model.getAmount();
+			// result = 1
+			// result = 2
+			// 以下反復
+			result_list = result_list + result;
+			// result_list = 0+1
+			// result_list = 0+1 + 2
+			// 以下反復
+		}
+
 		System.out.println("list合計：" + result_list);
 
 		/////////////////////////////////////////////
 		// 値を取り出し合計するコードを書いてください。
 		List<List<Model>> finalList = new ArrayList<List<Model>>();
+
+		// List型のfinalList (ArrayListではない)
+		// List<List<Model> finalList = new ArrayList<>(); と同じ
+
 		finalList.add(new ArrayList<Model>() {
 			{
 				add(new Model(1));
@@ -84,11 +117,21 @@ public class Main {
 				add(new Model(9));
 			}
 		});
+		// Model型のArrayListにaddしてそのままModel型のListにaddする
 
 		int result_final = 0;
 
 		// TODO ここに合計ロジック記載
+		
+		List<Model> tsil = finalList.get(0); // finalList.add()内部の全addを取得
 
+		
+		for (int index = 0; index < 9; index++) {
+			Model model = tsil.get(index);
+			int result = model.getAmount();
+			result_final = result_final + result;
+		}
+		
 		System.out.println("final合計：" + result_final);
 
 	}
@@ -108,14 +151,17 @@ public class Main {
 			this.amount = amount;
 		}
 	}
+	// amountにint値をsetし、それをreturnしてget（取得）する
+	// Modelクラスで生成されたインスタンスはModel型 (int型 X )
+	// getAmount()しない限りsetAmount()されたintの値は取得できない
 
 	static class AmountList {
 		private List list;
-
+	
 		public List getList() {
 			return list;
 		}
-
+		
 		public void setList(List list) {
 			this.list = list;
 		}
