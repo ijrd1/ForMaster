@@ -20,7 +20,7 @@ public class Main {
 		// TODO ここに合計ロジック記載
 
 		for (int i : array) {
-			result_array = result_array + i;
+			result_array += i;
 		}
 
 		System.out.println("array合計：" + result_array);
@@ -34,7 +34,7 @@ public class Main {
 		// TODO ここに合計ロジック記載
 
 		for (Integer s : set) {
-			result_set = result_set + s;
+			result_set += s;
 		}
 
 		System.out.println("set合計：" + result_set);
@@ -57,7 +57,7 @@ public class Main {
 
 		for (String key : map.keySet()) {
 			Integer value = map.get(key);
-			result_map = result_map + value;
+			result_map += value;
 		}
 
 		System.out.println("map合計：" + result_map);
@@ -81,7 +81,7 @@ public class Main {
 
 		for (Model model : list) {
 			int model_get = model.getAmount();
-			result_list = result_list + model_get;
+			result_list += model_get;
 		}
 
 		System.out.println("list合計：" + result_list);
