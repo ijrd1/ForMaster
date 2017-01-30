@@ -28,7 +28,6 @@ public class Main {
 		int result_set = 0;
 
 		// TODO ここに合計ロジック記載
-
 		for (Integer s : set) {
 			result_set += s;
 		}
@@ -53,8 +52,6 @@ public class Main {
 		}
 		System.out.println("map合計：" + result_map);
 
-		
-		
 		// 値を取り出し合計するコードを書いてください。
 		List<Model> list = new ArrayList();
 		list.add(new Model(1));
@@ -75,8 +72,6 @@ public class Main {
 		}
 		System.out.println("list合計：" + result_list);
 
-		
-		
 		// 値を取り出し合計するコードを書いてください。
 		List<List<Model>> finalList = new ArrayList<List<Model>>();
 		finalList.add(new ArrayList<Model>() {
@@ -95,17 +90,13 @@ public class Main {
 		int result_final = 0;
 
 		// TODO ここに合計ロジック記載
-		List<Model> tsil = finalList.get(0);
-
 		for (int index = 0; index < 9; index++) {
-			Model model = tsil.get(index);
-			int result = model.getAmount();
-			result_final = result_final + result;
+			int listModelGet = finalList.get(0).get(index).getAmount();
+			result_final += listModelGet;
 		}
 		System.out.println("final合計：" + result_final);
 
 	}
-	
 
 	static class Model {
 		private int amount;
