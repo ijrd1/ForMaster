@@ -12,20 +12,16 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		/////////////////////////////////////////////
 		// 値を取り出し合計するコードを書いてください。
 		int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		int result_array = 0;
 
 		// TODO ここに合計ロジック記載
-
 		for (int i : array) {
 			result_array += i;
 		}
-
 		System.out.println("array合計：" + result_array);
 
-		/////////////////////////////////////////////
 		// 値を取り出し合計するコードを書いてください。
 		Set<Integer> set = new HashSet<Integer>();
 		Collections.addAll(set, 1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -36,10 +32,8 @@ public class Main {
 		for (Integer s : set) {
 			result_set += s;
 		}
-
 		System.out.println("set合計：" + result_set);
 
-		/////////////////////////////////////////////
 		// 値を取り出し合計するコードを書いてください。
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("1", 1);
@@ -54,15 +48,13 @@ public class Main {
 		int result_map = 0;
 
 		// TODO ここに合計ロジック記載
-
 		for (String key : map.keySet()) {
-			Integer value = map.get(key);
-			result_map += value;
+			result_map += map.get(key);
 		}
-
 		System.out.println("map合計：" + result_map);
 
-		/////////////////////////////////////////////
+		
+		
 		// 値を取り出し合計するコードを書いてください。
 		List<Model> list = new ArrayList();
 		list.add(new Model(1));
@@ -78,15 +70,13 @@ public class Main {
 		int result_list = 0;
 
 		// TODO ここに合計ロジック記載
-
 		for (Model model : list) {
-			int model_get = model.getAmount();
-			result_list += model_get;
+			result_list += model.getAmount();
 		}
-
 		System.out.println("list合計：" + result_list);
 
-		/////////////////////////////////////////////
+		
+		
 		// 値を取り出し合計するコードを書いてください。
 		List<List<Model>> finalList = new ArrayList<List<Model>>();
 		finalList.add(new ArrayList<Model>() {
@@ -105,7 +95,6 @@ public class Main {
 		int result_final = 0;
 
 		// TODO ここに合計ロジック記載
-
 		List<Model> tsil = finalList.get(0);
 
 		for (int index = 0; index < 9; index++) {
@@ -113,10 +102,10 @@ public class Main {
 			int result = model.getAmount();
 			result_final = result_final + result;
 		}
-
 		System.out.println("final合計：" + result_final);
 
 	}
+	
 
 	static class Model {
 		private int amount;
