@@ -1,4 +1,4 @@
-package jp.microad.zundokokiyoshi;
+package jp.ma.zundokokiyoshi;
 
 import java.util.Random;
 import java.util.List;
